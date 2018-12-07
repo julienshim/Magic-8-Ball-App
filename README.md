@@ -1,6 +1,6 @@
 # Magic 8 Ball App
 
-Simple Magic 8 Ball app with Motion Detection for iOS
+Simple Magic 8 Ball app with Motion Detection  built with Swift 4, Xcode 10.1, for iOS 12.1
 
 ## Demo
 

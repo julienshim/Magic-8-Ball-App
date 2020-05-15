@@ -9,19 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        imageView.image = #imageLiteral(resourceName: "ball3")
-    }
-
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBAction func askButtonPressed(_ sender: UIButton) {
         
-       let ballArray = [ #imageLiteral(resourceName: "ball2"), #imageLiteral(resourceName: "ball1"), #imageLiteral(resourceName: "ball1"), #imageLiteral(resourceName: "ball5"), #imageLiteral(resourceName: "ball5")]
-            
-    }
+        let ballArray = [ #imageLiteral(resourceName: "ball1"), #imageLiteral(resourceName: "ball2"), #imageLiteral(resourceName: "ball3"), #imageLiteral(resourceName: "ball4"), #imageLiteral(resourceName: "ball5")]
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+            newBallImage()
+        }
+
+        @IBOutlet weak var imageView: UIImageView!
+        
+        override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+            newBallImage()
+        }
+        
+        @IBAction func askButtonPressed(_ sender: UIButton) {
+            newBallImage()
+        }
+        
+        func newBallImage() {
+            imageView.image = ballArray[Int.random(in: 0...(ballArray.count-1))]
+        }
 }
 
